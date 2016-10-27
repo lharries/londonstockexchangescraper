@@ -47,7 +47,6 @@ def getCompanyLinkCode(desiredCompany):
 	return companyLinkCode
 
 #uses the company link code to extract the desired rows
-#desired rows are farily messily hard code
 def getDesiredRowData(companyLinkCode):
 	fundamentalsPage = "http://www.londonstockexchange.com/exchange/prices/stocks/summary/fundamentals.html?fourWayKey="
 	#webbrowser.open(fundamentalsPage)
@@ -71,8 +70,8 @@ def getDesiredRowData(companyLinkCode):
 
 #prints the company name followed by the rows
 def printDesiredCompanyDataToHTMLFile(desiredCompany,desiredCompanyData) :
-	print >>f, "<table>"
 	print >>f, "<h1>"+ desiredCompany + "</h1>"
+	print >>f, "<table>"
 	for i in desiredCompanyData:
 		print >>f, i
 	print >>f, "</table>"
